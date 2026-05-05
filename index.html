@@ -17,38 +17,48 @@ PLACEHOLDERS: fill these before publishing
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PhonemeAR: Augmented Reality for Phonological Learning</title>
-  <meta name="description" content="A browser-based Tangible-AR system for phonological awareness in neurodiverse children. Research by Warren D'Mello, Goa University." />
+  <meta name="description"
+    content="A browser-based Tangible-AR system for phonological awareness in neurodiverse children. Research by Warren Dmello, Goa University." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
 
   <style>
     /* =====================================================================
        CSS CUSTOM PROPERTIES
        ===================================================================== */
     :root {
-      --bg:         #F8F7F4;
-      --text:       #1A1A1A;
-      --secondary:  #6B6B6B;
-      --accent:     #2D5BE3;
-      --muted:      #C0BDB8;
-      --surface:    #E8E6E0;
-      --cite-bg:    #F1F0EC;
-      --sidebar-w:  220px;
+      --bg: #F8F7F4;
+      --text: #1A1A1A;
+      --secondary: #6B6B6B;
+      --accent: #2D5BE3;
+      --muted: #C0BDB8;
+      --surface: #E8E6E0;
+      --cite-bg: #F1F0EC;
+      --sidebar-w: 220px;
       --content-max: 860px;
       --section-pad: 130px;
       --font-serif: 'DM Serif Display', Georgia, serif;
-      --font-sans:  'Inter', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
     }
 
     /* =====================================================================
        RESET & BASE
        ===================================================================== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     html {
       font-size: 13px;
@@ -68,7 +78,10 @@ PLACEHOLDERS: fill these before publishing
       color: var(--accent);
       text-decoration: none;
     }
-    a:hover { text-decoration: underline; }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     /* =====================================================================
        LAYOUT
@@ -90,9 +103,9 @@ PLACEHOLDERS: fill these before publishing
       display: flex;
       flex-direction: column;
       padding: 44px 28px;
-      border-right: 1px solid rgba(0,0,0,0.07);
+      border-right: 1px solid rgba(0, 0, 0, 0.07);
       background: var(--bg);
-      box-shadow: 1px 0 0 rgba(0,0,0,0.04);
+      box-shadow: 1px 0 0 rgba(0, 0, 0, 0.04);
       z-index: 100;
       overflow-y: auto;
     }
@@ -105,6 +118,7 @@ PLACEHOLDERS: fill these before publishing
       margin-bottom: 40px;
       line-height: 1.2;
     }
+
     .sidebar-logo span {
       display: block;
       font-family: var(--font-sans);
@@ -120,7 +134,10 @@ PLACEHOLDERS: fill these before publishing
       list-style: none;
       flex: 1;
     }
-    .sidebar-nav li + li { margin-top: 2px; }
+
+    .sidebar-nav li+li {
+      margin-top: 2px;
+    }
 
     .sidebar-nav a {
       display: block;
@@ -134,10 +151,12 @@ PLACEHOLDERS: fill these before publishing
       padding-left: 10px;
       margin-left: -10px;
     }
+
     .sidebar-nav a:hover {
       color: var(--text);
       text-decoration: none;
     }
+
     .sidebar-nav a.active {
       color: var(--accent);
       font-weight: 500;
@@ -147,19 +166,24 @@ PLACEHOLDERS: fill these before publishing
     .sidebar-footer {
       margin-top: 40px;
       padding-top: 20px;
-      border-top: 1px solid rgba(0,0,0,0.07);
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
     }
+
     .sidebar-footer .researcher-name {
       font-size: 11px;
       font-weight: 500;
       color: var(--text);
       margin-bottom: 4px;
     }
+
     .sidebar-footer a {
       font-size: 11px;
       color: var(--secondary);
     }
-    .sidebar-footer a:hover { color: var(--accent); }
+
+    .sidebar-footer a:hover {
+      color: var(--accent);
+    }
 
     /* =====================================================================
        MAIN CONTENT
@@ -180,7 +204,7 @@ PLACEHOLDERS: fill these before publishing
       right: 20px;
       z-index: 300;
       background: var(--bg);
-      border: 1px solid rgba(0,0,0,0.12);
+      border: 1px solid rgba(0, 0, 0, 0.12);
       border-radius: 4px;
       width: 38px;
       height: 38px;
@@ -191,6 +215,7 @@ PLACEHOLDERS: fill these before publishing
       gap: 5px;
       padding: 0;
     }
+
     .hamburger span {
       display: block;
       width: 18px;
@@ -198,24 +223,37 @@ PLACEHOLDERS: fill these before publishing
       background: var(--text);
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
-    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
 
     /* Mobile drawer overlay */
     .drawer-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.35);
+      background: rgba(0, 0, 0, 0.35);
       z-index: 200;
       opacity: 0;
       transition: opacity 0.25s ease;
     }
+
     .drawer-overlay.visible {
       display: block;
     }
-    .drawer-overlay.active { opacity: 1; }
+
+    .drawer-overlay.active {
+      opacity: 1;
+    }
 
     /* =====================================================================
        SECTION BASE
@@ -240,6 +278,7 @@ PLACEHOLDERS: fill these before publishing
       align-items: center;
       gap: 10px;
     }
+
     .section-label::after {
       content: '';
       display: block;
@@ -263,13 +302,16 @@ PLACEHOLDERS: fill these before publishing
       color: var(--text);
       max-width: 680px;
     }
-    .body-text + .body-text { margin-top: 20px; }
+
+    .body-text+.body-text {
+      margin-top: 20px;
+    }
 
     /* =====================================================================
        SECTION DIVIDERS
        ===================================================================== */
-    section + section {
-      border-top: 1px solid rgba(0,0,0,0.06);
+    section+section {
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
     }
 
     /* =====================================================================
@@ -326,6 +368,7 @@ PLACEHOLDERS: fill these before publishing
       padding: 5px 14px;
       background: transparent;
     }
+
     .meta-pill.highlight {
       color: var(--accent);
       border-color: var(--accent);
@@ -338,7 +381,7 @@ PLACEHOLDERS: fill these before publishing
       line-height: 1.82;
       color: var(--text);
       padding-top: 40px;
-      border-top: 1px solid rgba(0,0,0,0.08);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     /* =====================================================================
@@ -349,6 +392,7 @@ PLACEHOLDERS: fill these before publishing
       padding: 0 0 0 24px;
       border-left: 3px solid var(--accent);
     }
+
     .pull-quote p {
       font-family: var(--font-serif);
       font-size: 22px;
@@ -367,6 +411,7 @@ PLACEHOLDERS: fill these before publishing
       border-left: 3px solid var(--accent);
       border-radius: 0 4px 4px 0;
     }
+
     .citation-text {
       font-family: 'Courier New', Courier, monospace;
       font-size: 11.5px;
@@ -374,6 +419,7 @@ PLACEHOLDERS: fill these before publishing
       line-height: 1.7;
       white-space: pre-wrap;
     }
+
     .citation-actions {
       display: flex;
       align-items: center;
@@ -381,11 +427,13 @@ PLACEHOLDERS: fill these before publishing
       margin-top: 14px;
       flex-wrap: wrap;
     }
+
     .citation-link {
       font-size: 12px;
       font-weight: 500;
       color: var(--accent);
     }
+
     .badge {
       font-size: 10.5px;
       font-weight: 600;
@@ -410,11 +458,13 @@ PLACEHOLDERS: fill these before publishing
       align-items: center;
       justify-content: center;
     }
+
     .media-placeholder p {
       font-size: 12px;
       color: var(--secondary);
       letter-spacing: 0.03em;
     }
+
     /* SQUARE placeholder for radar */
     .media-placeholder.square {
       aspect-ratio: 1 / 1;
@@ -429,21 +479,26 @@ PLACEHOLDERS: fill these before publishing
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
-      border-top: 1px solid rgba(0,0,0,0.09);
+      border-top: 1px solid rgba(0, 0, 0, 0.09);
     }
+
     .spec-row {
       display: contents;
     }
-    .spec-key, .spec-val {
+
+    .spec-key,
+    .spec-val {
       padding: 13px 0;
       font-size: 13px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
+
     .spec-key {
       font-weight: 500;
       color: var(--text);
       padding-right: 20px;
     }
+
     .spec-val {
       color: var(--secondary);
     }
@@ -457,19 +512,25 @@ PLACEHOLDERS: fill these before publishing
       flex-direction: column;
       gap: 0;
     }
+
     .dimension-item {
       padding: 20px 0 20px 20px;
       border-left: 2px solid var(--accent);
       margin-left: 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
-    .dimension-item:last-child { border-bottom: none; }
+
+    .dimension-item:last-child {
+      border-bottom: none;
+    }
+
     .dimension-name {
       font-size: 14px;
       font-weight: 500;
       color: var(--text);
       margin-bottom: 4px;
     }
+
     .dimension-tag {
       font-size: 10px;
       font-weight: 600;
@@ -478,6 +539,7 @@ PLACEHOLDERS: fill these before publishing
       color: var(--accent);
       margin-bottom: 6px;
     }
+
     .dimension-desc {
       font-size: 13px;
       color: var(--secondary);
@@ -523,6 +585,7 @@ PLACEHOLDERS: fill these before publishing
       background: var(--muted);
       z-index: 0;
     }
+
     .step.completed:not(:last-child)::after,
     .step.active:not(:last-child)::after {
       background: var(--accent);
@@ -541,6 +604,7 @@ PLACEHOLDERS: fill these before publishing
       justify-content: center;
       margin-bottom: 12px;
     }
+
     .step-dot::after {
       content: '';
       display: block;
@@ -549,17 +613,21 @@ PLACEHOLDERS: fill these before publishing
       border-radius: 50%;
       background: transparent;
     }
+
     .step.completed .step-dot {
       border-color: var(--accent);
       background: var(--accent);
     }
+
     .step.completed .step-dot::after {
       background: white;
     }
+
     .step.active .step-dot {
       border-color: var(--accent);
       background: var(--bg);
     }
+
     .step.active .step-dot::after {
       background: var(--accent);
     }
@@ -572,10 +640,12 @@ PLACEHOLDERS: fill these before publishing
       line-height: 1.4;
       padding: 0 4px;
     }
+
     .step.completed .step-label,
     .step.active .step-label {
       color: var(--text);
     }
+
     .step.active .step-label {
       color: var(--accent);
     }
@@ -608,32 +678,39 @@ PLACEHOLDERS: fill these before publishing
     .researcher-bio {
       flex: 1;
     }
+
     .researcher-bio p {
       font-size: 15px;
       line-height: 1.8;
       color: var(--text);
     }
+
     .researcher-links {
       margin-top: 24px;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
     }
+
     .researcher-links a {
       font-size: 12px;
       color: var(--secondary);
       font-weight: 400;
     }
-    .researcher-links a:hover { color: var(--accent); }
+
+    .researcher-links a:hover {
+      color: var(--accent);
+    }
 
     /* =====================================================================
        FOOTER
        ===================================================================== */
     footer {
       padding: 40px 72px;
-      border-top: 1px solid rgba(0,0,0,0.07);
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
       text-align: center;
     }
+
     footer p {
       font-size: 11.5px;
       color: var(--secondary);
@@ -646,32 +723,47 @@ PLACEHOLDERS: fill these before publishing
     @media (max-width: 768px) {
       .sidebar {
         transform: translateX(-100%);
-        transition: transform 0.28s cubic-bezier(0.22,1,0.36,1);
+        transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
         z-index: 250;
         width: 260px;
       }
+
       .sidebar.open {
         transform: translateX(0);
       }
 
-      .hamburger { display: flex; }
+      .hamburger {
+        display: flex;
+      }
 
-      .main { margin-left: 0; }
+      .main {
+        margin-left: 0;
+      }
 
       section {
         padding: 80px 24px;
       }
+
       #hero {
         padding: 100px 24px 80px;
       }
 
-      .hero-title { font-size: 34px; }
+      .hero-title {
+        font-size: 34px;
+      }
 
       .specs-grid {
         grid-template-columns: 1fr;
       }
-      .spec-key { padding-bottom: 2px; border-bottom: none; }
-      .spec-val { padding-top: 0; }
+
+      .spec-key {
+        padding-bottom: 2px;
+        border-bottom: none;
+      }
+
+      .spec-val {
+        padding-top: 0;
+      }
 
       .researcher-layout {
         flex-direction: column;
@@ -684,6 +776,7 @@ PLACEHOLDERS: fill these before publishing
         gap: 0;
         align-items: flex-start;
       }
+
       .step {
         flex-direction: row;
         align-items: flex-start;
@@ -692,12 +785,14 @@ PLACEHOLDERS: fill these before publishing
         padding-bottom: 24px;
         flex: none;
       }
+
       .step:not(:last-child)::after {
         top: 24px;
         left: 11px;
         width: 1.5px;
         height: 100%;
       }
+
       .step-dot {
         margin-bottom: 0;
         margin-right: 14px;
@@ -705,10 +800,13 @@ PLACEHOLDERS: fill these before publishing
         flex-shrink: 0;
       }
 
-      footer { padding: 40px 24px; }
+      footer {
+        padding: 40px 24px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ====================================================================
@@ -743,7 +841,7 @@ PLACEHOLDERS: fill these before publishing
       </ul>
 
       <div class="sidebar-footer">
-        <p class="researcher-name">Warren D'Mello</p>
+        <p class="researcher-name">Warren Dmello</p>
         <a href="https://dmellow.framer.website" target="_blank" rel="noopener">↗ Portfolio</a>
       </div>
     </nav>
@@ -764,7 +862,7 @@ PLACEHOLDERS: fill these before publishing
             Augmented Reality for Phonological Learning in Neurodiverse Children
           </h1>
 
-          <p class="hero-subtitle">An ongoing research project by Warren D'Mello</p>
+          <p class="hero-subtitle">An ongoing research project by Warren Dmello</p>
 
           <div class="hero-meta">
             <span class="meta-pill">Goa, India</span>
@@ -774,7 +872,14 @@ PLACEHOLDERS: fill these before publishing
           </div>
 
           <div class="hero-summary">
-            <p>PhonemeAR is a browser-based Tangible-Augmented Reality system that lets neurodiverse children build words by scanning physical phoneme cards with a smartphone camera. Rather than remediating deficits through repetition, the system activates spatial, tactile, and visual-kinesthetic capabilities that screen-based phonics tools do not reach. A teacher mediates every session, choosing which phonemes to introduce, at what pace, and in what sequence, while an accompanying Learner Strength Profile instrument generates a personalised radar chart that configures session parameters around each child's cognitive profile. Developed independently as a single-file HTML application requiring no installation, PhonemeAR is currently in the pilot study phase at Anand Niketan Special School in Mapusa, Goa.</p>
+            <p>PhonemeAR is a browser-based Tangible-Augmented Reality system that lets neurodiverse children build
+              words by scanning physical phoneme cards with a smartphone camera. Rather than remediating deficits
+              through repetition, the system activates spatial, tactile, and visual-kinesthetic capabilities that
+              screen-based phonics tools do not reach. A teacher mediates every session, choosing which phonemes to
+              introduce, at what pace, and in what sequence, while an accompanying Learner Strength Profile instrument
+              generates a personalised radar chart that configures session parameters around each child's cognitive
+              profile. Developed independently as a single-file HTML application requiring no installation, PhonemeAR is
+              currently in the pilot study phase at Anand Niketan Special School in Mapusa, Goa.</p>
           </div>
         </div>
       </section>
@@ -787,14 +892,31 @@ PLACEHOLDERS: fill these before publishing
           <p class="section-label">The Problem</p>
           <h2 class="section-title">What existing tools get wrong</h2>
 
-          <p class="body-text">Most phonics software for neurodiverse children is designed around remediation: it identifies what a child struggles with and delivers more of it. The underlying assumption (that difficulty is the primary signal worth responding to) produces tools that are, by design, deficit-facing. A child's struggles become the interface. This is not a minor pedagogical choice; it is a structural one, and it shapes everything from interaction design to session pacing.</p>
+          <p class="body-text">Most phonics software for neurodiverse children is designed around remediation: it
+            identifies what a child struggles with and delivers more of it. The underlying assumption (that difficulty
+            is the primary signal worth responding to) produces tools that are, by design, deficit-facing. A child's
+            struggles become the interface. This is not a minor pedagogical choice; it is a structural one, and it
+            shapes everything from interaction design to session pacing.</p>
 
-          <p class="body-text" style="margin-top: 20px;">Phonological processing is a specific and frequently under-addressed gap in this picture. Phonological awareness, meaning the ability to recognise and manipulate the sound structure of words independent of their spelling, is the cognitive foundation for early reading. It is also the area where neurodiverse children, particularly those with dyslexia and related language processing differences, most often fall behind. Yet the dominant digital response to this gap is screen-based drill: abstract, unembodied, and entirely dependent on the visual-linguistic channel that these children find most taxing.</p>
+          <p class="body-text" style="margin-top: 20px;">Phonological processing is a specific and frequently
+            under-addressed gap in this picture. Phonological awareness, meaning the ability to recognise and manipulate
+            the sound structure of words independent of their spelling, is the cognitive foundation for early reading.
+            It is also the area where neurodiverse children, particularly those with dyslexia and related language
+            processing differences, most often fall behind. Yet the dominant digital response to this gap is
+            screen-based drill: abstract, unembodied, and entirely dependent on the visual-linguistic channel that these
+            children find most taxing.</p>
 
-          <p class="body-text" style="margin-top: 20px;">Augmented reality, in this context, is not a gimmick. It is a specific response to a specific failure mode. Many neurodiverse children have strong spatial, tactile, and visual-kinesthetic capabilities that conventional interfaces simply do not engage. Physical phoneme cards as AR triggers make the act of building words tangible and visible: the child's hands are doing the phonological work, not their eyes alone. The tool is also constrained by design: it requires a facilitating teacher, it works within the existing classroom relationship, and it does not attempt to replace pedagogical judgment. Every architectural decision follows from that constraint.</p>
+          <p class="body-text" style="margin-top: 20px;">Augmented reality, in this context, is not a gimmick. It is a
+            specific response to a specific failure mode. Many neurodiverse children have strong spatial, tactile, and
+            visual-kinesthetic capabilities that conventional interfaces simply do not engage. Physical phoneme cards as
+            AR triggers make the act of building words tangible and visible: the child's hands are doing the
+            phonological work, not their eyes alone. The tool is also constrained by design: it requires a facilitating
+            teacher, it works within the existing classroom relationship, and it does not attempt to replace pedagogical
+            judgment. Every architectural decision follows from that constraint.</p>
 
           <div class="pull-quote">
-            <p>"The system uses physical phoneme cards as tangible triggers for augmented reality overlays, making the act of building words physical and visible rather than abstract and screen-bound."</p>
+            <p>"The system uses physical phoneme cards as tangible triggers for augmented reality overlays, making the
+              act of building words physical and visible rather than abstract and screen-bound."</p>
           </div>
         </div>
       </section>
@@ -807,11 +929,27 @@ PLACEHOLDERS: fill these before publishing
           <p class="section-label">Research Foundation</p>
           <h2 class="section-title">Theoretical grounding</h2>
 
-          <p class="body-text">PhonemeAR is grounded in five bodies of work that converge on a single design philosophy: start from what a learner can do, not what they cannot. Ishii and Ullmer's Tangible Bits framework (1997) provides the foundational argument for coupling physical objects to digital information. The phoneme cards are not controllers; they are the primary cognitive artefacts. Antle's work on embodied child-computer interaction (2009) establishes why tactile card manipulation, rather than touchscreen gesture, is the right primary input modality for this age group and cognitive profile. Ishido's research on tactile media and neurodiversity (2024) directly informs the multi-sensory feedback design. Snowling's phonological deficit hypothesis (2000) justifies the phoneme-level granularity of the word-building task. And Armstrong's documentation of spatial and narrative strengths in dyslexia (2010) is the direct source of the strength-based design philosophy: the conviction that a learning system should discover and amplify human strengths rather than map and measure deficits.</p>
+          <p class="body-text">PhonemeAR is grounded in five bodies of work that converge on a single design philosophy:
+            start from what a learner can do, not what they cannot. Ishii and Ullmer's Tangible Bits framework (1997)
+            provides the foundational argument for coupling physical objects to digital information. The phoneme cards
+            are not controllers; they are the primary cognitive artefacts. Antle's work on embodied child-computer
+            interaction (2009) establishes why tactile card manipulation, rather than touchscreen gesture, is the right
+            primary input modality for this age group and cognitive profile. Ishido's research on tactile media and
+            neurodiversity (2024) directly informs the multi-sensory feedback design. Snowling's phonological deficit
+            hypothesis (2000) justifies the phoneme-level granularity of the word-building task. And Armstrong's
+            documentation of spatial and narrative strengths in dyslexia (2010) is the direct source of the
+            strength-based design philosophy: the conviction that a learning system should discover and amplify human
+            strengths rather than map and measure deficits.</p>
 
-          <p class="body-text" style="margin-top: 20px;">The Learner Strength Profile instrument extends this grounding through Goswami's research on auditory-rhythmic processing (2011), Vygotsky's zone of proximal development for social-relational session design, and trauma-informed practice literature for the frustration response dimension.</p>
+          <p class="body-text" style="margin-top: 20px;">The Learner Strength Profile instrument extends this grounding
+            through Goswami's research on auditory-rhythmic processing (2011), Vygotsky's zone of proximal development
+            for social-relational session design, and trauma-informed practice literature for the frustration response
+            dimension.</p>
 
-          <p class="body-text" style="margin-top: 20px;">This theoretical foundation was first formalised in a research paper published at CCICT 2025, based on Warren's final year undergraduate project. That paper examined augmented reality as an intervention for inclusive education more broadly; PhonemeAR is the focused, independently developed system that grew from its findings and research questions.</p>
+          <p class="body-text" style="margin-top: 20px;">This theoretical foundation was first formalised in a research
+            paper published at CCICT 2025, based on Warren's final year undergraduate project. That paper examined
+            augmented reality as an intervention for inclusive education more broadly; PhonemeAR is the focused,
+            independently developed system that grew from its findings and research questions.</p>
 
           <!-- Citation block -->
           <div class="citation-block">
@@ -821,7 +959,8 @@ International Conference on Computational Intelligence and Communication
 Technologies (CCICT), Sonepat, India, 2025, pp. 82-88,
 doi: 10.1109/CCICT65753.2025.00023</pre>
             <div class="citation-actions">
-              <a class="citation-link" href="https://doi.ieeecomputersociety.org/10.1109/CCICT65753.2025.00023" target="_blank" rel="noopener">Read Paper →</a>
+              <a class="citation-link" href="https://doi.ieeecomputersociety.org/10.1109/CCICT65753.2025.00023"
+                target="_blank" rel="noopener">Read Paper →</a>
               <span class="badge">★ IEEE Best Paper Award</span>
             </div>
           </div>
@@ -836,27 +975,32 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
           <p class="section-label">The System</p>
           <h2 class="section-title">PhonemeAR: how it works</h2>
 
-          <p class="body-text">PhonemeAR is a single-file HTML application. There is no build step, no backend, and no installation required. A teacher opens the URL on any smartphone, selects 2–8 phonemes from the core working set, and the application generates unique card images and compiles AR tracking data entirely in-browser, a process that takes 10–30 seconds on mobile, managed with a progress bar. The teacher downloads the cards as PNG files to print, or displays them full-screen on a laptop. The child then points the phone camera at the physical cards and words form in augmented reality as cards are combined.</p>
+          <p class="body-text">PhonemeAR is a single-file HTML application. There is no build step, no backend, and no
+            installation required. A teacher opens the URL on any smartphone, selects 2–8 phonemes from the core working
+            set, and the application generates unique card images and compiles AR tracking data entirely in-browser, a
+            process that takes 10–30 seconds on mobile, managed with a progress bar. The teacher downloads the cards as
+            PNG files to print, or displays them full-screen on a laptop. The child then points the phone camera at the
+            physical cards and words form in augmented reality as cards are combined.</p>
 
-          <p class="body-text" style="margin-top: 20px;">Each valid phoneme combination triggers the Web Speech API to read the sequence aloud, spell it, and say the whole word again, forming a three-pass auditory reinforcement loop. After each session, the teacher sees a summary screen showing words built, accuracy percentage, and average attempt time. A JSON log is available for export, but only after the teacher has reviewed the human-readable summary. This gates raw data behind a pedagogical review step by design.</p>
+          <p class="body-text" style="margin-top: 20px;">Each valid phoneme combination triggers the Web Speech API to
+            read the sequence aloud, spell it, and say the whole word again, forming a three-pass auditory reinforcement
+            loop. After each session, the teacher sees a summary screen showing words built, accuracy percentage, and
+            average attempt time. A JSON log is available for export, but only after the teacher has reviewed the
+            human-readable summary. This gates raw data behind a pedagogical review step by design.</p>
 
-          <p class="body-text" style="margin-top: 20px;">The decision to build as a single-file browser app was a deployment constraint, not a technical preference. The target environment is a special school in Goa where teacher technical literacy varies and app installation introduces friction. A shareable URL that works on any smartphone removes every barrier between the teacher and the tool. Updates deploy instantly without any action required from the school.</p>
+          <p class="body-text" style="margin-top: 20px;">The decision to build as a single-file browser app was a
+            deployment constraint, not a technical preference. The target environment is a special school in Goa where
+            teacher technical literacy varies and app installation introduces friction. A shareable URL that works on
+            any smartphone removes every barrier between the teacher and the tool. Updates deploy instantly without any
+            action required from the school.</p>
 
-          <p class="body-text" style="margin-top: 20px;">The current working phoneme set is nine phonemes: k, a, t, m, s, ee, p, n, i. Cards use the phoneme symbol rather than the letter: k represents the /k/ sound regardless of spelling. This is deliberate: the tool targets phonological awareness (sound recognition and manipulation), which is a distinct cognitive skill from spelling instruction. The set generates 24 valid CVC and CV words across three vowel patterns.</p>
+          <p class="body-text" style="margin-top: 20px;">The current working phoneme set is nine phonemes: k, a, t, m,
+            s, ee, p, n, i. Cards use the phoneme symbol rather than the letter: k represents the /k/ sound regardless
+            of spelling. This is deliberate: the tool targets phonological awareness (sound recognition and
+            manipulation), which is a distinct cognitive skill from spelling instruction. The set generates 24 valid CVC
+            and CV words across three vowel patterns.</p>
 
-          <!-- VIDEO PLACEHOLDER
-               Replace this div with:
-               <video controls width="100%" style="border-radius:4px;">
-                 <source src="demo.mp4" type="video/mp4" />
-               </video>
-               OR a YouTube embed:
-               <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-                 <iframe src="https://www.youtube.com/embed/VIDEO_ID" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe>
-               </div>
-          -->
-          <div class="media-placeholder" style="margin-top: 40px;">
-            <p>[Demo video: coming soon]</p>
-          </div>
+
 
           <!-- Technical Specs -->
           <div class="specs-grid" style="margin-top: 48px;">
@@ -904,14 +1048,22 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
           <p class="section-label">Learner Strength Profile</p>
           <h2 class="section-title">Configuring the system around the learner</h2>
 
-          <p class="body-text">The Learner Strength Profile (LSP) is a companion assessment instrument that runs a 19-question structured observation across seven dimensions of learner profile. It is designed to be completed by the facilitating teacher, not the child, and takes approximately five minutes. The output is a radar chart and a recommended phoneme set and session configuration for the AR Builder, covering which phonemes to introduce, how long hints should last, and whether the session should be solo or facilitated. The relationship between the two tools is bidirectional: the Strength Mapper configures the AR session, and the AR session's logs update the profile over time as real interaction data accumulates. The system learns from how the child actually behaves, not just from what a pre-session assessment captures.</p>
+          <p class="body-text">The Learner Strength Profile (LSP) is a companion assessment instrument that runs a
+            19-question structured observation across seven dimensions of learner profile. It is designed to be
+            completed by the facilitating teacher, not the child, and takes approximately five minutes. The output is a
+            radar chart and a recommended phoneme set and session configuration for the AR Builder, covering which
+            phonemes to introduce, how long hints should last, and whether the session should be solo or facilitated.
+            The relationship between the two tools is bidirectional: the Strength Mapper configures the AR session, and
+            the AR session's logs update the profile over time as real interaction data accumulates. The system learns
+            from how the child actually behaves, not just from what a pre-session assessment captures.</p>
 
           <!-- RADAR CHART PLACEHOLDER
                Replace this div with:
                <img src="radar-chart.png" alt="LSP radar chart output example" style="max-width:440px;width:100%;border-radius:4px;" />
           -->
           <div class="media-placeholder square" style="margin-top: 40px;">
-            <img src="strength-mapper.png" alt="LSP radar chart output example" style="max-width:440px;width:100%;border-radius:4px;" />
+            <img src="strength-mapper.png" alt="LSP radar chart output example"
+              style="max-width:440px;width:100%;border-radius:4px;" />
           </div>
 
           <!-- The 7 dimensions -->
@@ -920,43 +1072,50 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
             <div class="dimension-item">
               <p class="dimension-tag">Primary · TK</p>
               <p class="dimension-name">Tactile-Kinesthetic</p>
-              <p class="dimension-desc">Predicts engagement with physical card manipulation as the primary interaction modality. Grounded in Antle (2009) and Armstrong (2010).</p>
+              <p class="dimension-desc">Predicts engagement with physical card manipulation as the primary interaction
+                modality. Grounded in Antle (2009) and Armstrong (2010).</p>
             </div>
 
             <div class="dimension-item">
               <p class="dimension-tag">Primary · VS</p>
               <p class="dimension-name">Visual-Spatial</p>
-              <p class="dimension-desc">Predicts response to colour coding and augmented reality overlays. Grounded in Armstrong (2010) and Gardner (1983).</p>
+              <p class="dimension-desc">Predicts response to colour coding and augmented reality overlays. Grounded in
+                Armstrong (2010) and Gardner (1983).</p>
             </div>
 
             <div class="dimension-item">
               <p class="dimension-tag">Primary · AR</p>
               <p class="dimension-name">Auditory-Rhythmic</p>
-              <p class="dimension-desc">Predicts engagement with phoneme audio feedback and the three-pass speech loop. Grounded in Goswami (2011).</p>
+              <p class="dimension-desc">Predicts engagement with phoneme audio feedback and the three-pass speech loop.
+                Grounded in Goswami (2011).</p>
             </div>
 
             <div class="dimension-item">
               <p class="dimension-tag">Primary · NI</p>
               <p class="dimension-name">Narrative-Imaginative</p>
-              <p class="dimension-desc">Predicts engagement with story-based session framing. Grounded in Ishido (2024) and Egan (1986).</p>
+              <p class="dimension-desc">Predicts engagement with story-based session framing. Grounded in Ishido (2024)
+                and Egan (1986).</p>
             </div>
 
             <div class="dimension-item">
               <p class="dimension-tag">Primary · SR</p>
               <p class="dimension-name">Social-Relational</p>
-              <p class="dimension-desc">Informs whether the session structure should be solo or teacher-facilitated. Grounded in Vygotsky's zone of proximal development.</p>
+              <p class="dimension-desc">Informs whether the session structure should be solo or teacher-facilitated.
+                Grounded in Vygotsky's zone of proximal development.</p>
             </div>
 
             <div class="dimension-item">
               <p class="dimension-tag">Supporting · FR</p>
               <p class="dimension-name">Frustration Response</p>
-              <p class="dimension-desc">Informs error state design and hint duration, shaping how the system responds when a child encounters difficulty. Grounded in trauma-informed practice literature.</p>
+              <p class="dimension-desc">Informs error state design and hint duration, shaping how the system responds
+                when a child encounters difficulty. Grounded in trauma-informed practice literature.</p>
             </div>
 
             <div class="dimension-item">
               <p class="dimension-tag">Supporting · AP</p>
               <p class="dimension-name">Attention Pattern</p>
-              <p class="dimension-desc">Informs number of rounds, pacing, and break structure within a session. Grounded in ADHD research and session design literature.</p>
+              <p class="dimension-desc">Informs number of rounds, pacing, and break structure within a session. Grounded
+                in ADHD research and session design literature.</p>
             </div>
 
           </div>
@@ -972,11 +1131,26 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
           <h2 class="section-title">Testing in the field</h2>
           <p class="pilot-subtitle">Currently in progress at Anand Niketan Special School, Mapusa, Goa</p>
 
-          <p class="body-text">The system has been validated technically. The pilot study is designed to validate educational impact, surfacing the things that only field deployment reveals. Sessions are conducted at Anand Niketan Special School in Mapusa, Goa, with neurodiverse children aged 5–8. Mr. Babi Malik has confirmed agreement to facilitate the pilot. Parental consent forms and child assent are required before any session begins.</p>
+          <p class="body-text">The system has been validated technically. The pilot study is designed to validate
+            educational impact, surfacing the things that only field deployment reveals. Sessions are conducted at Anand
+            Niketan Special School in Mapusa, Goa, with neurodiverse children aged 5–8. Mr. Babi Malik has confirmed
+            agreement to facilitate the pilot. Parental consent forms and child assent are required before any session
+            begins.</p>
 
-          <p class="body-text" style="margin-top: 20px;">The pilot is structured around four research questions. First: does the child engage with the physical cards as the primary interaction object, or does the AR overlay become the dominant attractor? Second: does the AR component add to the phoneme-building task, or does it distract from it? Third: what error patterns appear in the session logs, specifically the ratio of wrong-order errors (correct phonemes, wrong arrangement) to wrong-phoneme errors? Fourth: can the facilitating teacher operate the tool without developer support? The last question is treated as a binary usability constraint: if the teacher needs help, the tool has failed on its own terms.</p>
+          <p class="body-text" style="margin-top: 20px;">The pilot is structured around four research questions. First:
+            does the child engage with the physical cards as the primary interaction object, or does the AR overlay
+            become the dominant attractor? Second: does the AR component add to the phoneme-building task, or does it
+            distract from it? Third: what error patterns appear in the session logs, specifically the ratio of
+            wrong-order errors (correct phonemes, wrong arrangement) to wrong-phoneme errors? Fourth: can the
+            facilitating teacher operate the tool without developer support? The last question is treated as a binary
+            usability constraint: if the teacher needs help, the tool has failed on its own terms.</p>
 
-          <p class="body-text" style="margin-top: 20px;">Session structure follows a consistent arc: teacher introduction, phoneme selection, in-browser card compilation (10–30 seconds), a 10–15 minute scanning session, and review of the session summary screen. JSON session logs are exported for analysis. That the pilot is ongoing rather than complete is not a limitation. It is the honest state of empirically grounded educational technology research, where the most important validation is always the one that happens in the room with the children.</p>
+          <p class="body-text" style="margin-top: 20px;">Session structure follows a consistent arc: teacher
+            introduction, phoneme selection, in-browser card compilation (10–30 seconds), a 10–15 minute scanning
+            session, and review of the session summary screen. JSON session logs are exported for analysis. That the
+            pilot is ongoing rather than complete is not a limitation. It is the honest state of empirically grounded
+            educational technology research, where the most important validation is always the one that happens in the
+            room with the children.</p>
 
           <!-- Stepper: update "active" and "completed" classes as stages progress -->
           <!-- STAGES: System Development → Ethics & Access → Pilot Sessions → Analysis → Publication -->
@@ -1018,19 +1192,27 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
       <section id="researcher">
         <div class="section-content">
           <p class="section-label">The Researcher</p>
-          <h2 class="section-title">Warren D'Mello</h2>
+          <h2 class="section-title">Warren Dmello</h2>
 
           <div class="researcher-layout">
-                 <img src="profile-pic.jpeg" alt="Warren Dmello"
-                      style="width:108px;height:108px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+            <img src="profile-pic.jpeg" alt="Warren Dmello"
+              style="width:108px;height:108px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
             <!-- <div class="researcher-photo">Photo</div> -->
 
             <div class="researcher-bio">
-              <p>Warren D'Mello is a Computer Engineering graduate from Goa University (2025) working at the intersection of human-computer interaction, tangible interaction, and inclusive education. PhonemeAR emerged from fieldwork at special education schools in Goa and a conviction that learning systems should discover and amplify human strengths rather than measure deficits. The project sits at a specific intersection of AR engineering, phonological theory, and strength-based pedagogy, one that required building the research instrument alongside the intervention itself. He is currently applying to graduate programmes in HCI and media design, including the Keio University Graduate School of Media Design, to continue this work in a structured academic environment with access to the interdisciplinary methods it requires.</p>
+              <p>Warren Dmello is a Computer Engineering graduate from Goa University (2025) working at the intersection
+                of human-computer interaction, tangible interaction, and inclusive education. PhonemeAR emerged from
+                fieldwork at special education schools in Goa and a conviction that learning systems should discover and
+                amplify human strengths rather than measure deficits. The project sits at a specific intersection of AR
+                engineering, phonological theory, and strength-based pedagogy, one that required building the research
+                instrument alongside the intervention itself. He is currently applying to graduate programmes in HCI and
+                media design, including the Keio University Graduate School of Media Design, to continue this work in a
+                structured academic environment with access to the interdisciplinary methods it requires.</p>
 
               <div class="researcher-links">
-                <a href="mailto:warrendmello@gmail.com">warrendmello@gmail.com</a>
-                <a href="https://www.linkedin.com/in/warren-dmello-47279b238" target="_blank" rel="noopener">LinkedIn ↗</a>
+                <a href="mailto:warrendmello1403@gmail.com">warrendmello1403@gmail.com</a>
+                <a href="https://www.linkedin.com/in/warren-dmello-47279b238" target="_blank" rel="noopener">LinkedIn
+                  ↗</a>
                 <a href="https://dmellow.framer.website" target="_blank" rel="noopener">Portfolio ↗</a>
               </div>
             </div>
@@ -1043,7 +1225,7 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
            FOOTER
            ================================================================ -->
       <footer>
-        <p>PhonemeAR Research Project · Warren D'Mello · <span id="year"></span></p>
+        <p>PhonemeAR Research Project · Warren Dmello · <span id="year"></span></p>
       </footer>
 
     </main>
@@ -1083,9 +1265,9 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
     /* ==================================================================
        MOBILE HAMBURGER DRAWER
        ================================================================== */
-    const hamburger  = document.getElementById('hamburger');
-    const sidebar    = document.getElementById('sidebar');
-    const overlay    = document.getElementById('drawerOverlay');
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('drawerOverlay');
 
     function openDrawer() {
       sidebar.classList.add('open');
@@ -1123,7 +1305,7 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
        SMOOTH SCROLL WITH OFFSET
        ================================================================== */
     navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
+      link.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
         if (!targetId.startsWith('#')) return;
         const target = document.querySelector(targetId);
@@ -1138,4 +1320,5 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
     });
   </script>
 </body>
+
 </html>
