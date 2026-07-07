@@ -10,9 +10,9 @@ PLACEHOLDERS: fill these before publishing
    in #lsp with an <img> pointing to a screenshot of the LSP radar output.
 4. [PLACEHOLDER: LinkedIn URL confirmed]: Verify the LinkedIn URL in
    #researcher matches your current profile URL.
-5. [PLACEHOLDER: pilot study current stage]: In the stepper component inside
-   #pilot, update the CSS class "active" / "completed" to reflect the actual
-   current stage when sessions begin.
+5. [PLACEHOLDER: pilot study current stage]: DONE. First round of sessions
+   completed at Sanjay School, Porvorim. Stepper now shows "Analysis" as the
+   active stage. Update again when analysis/publication stages progress.
 =============================================================================
 -->
 <!DOCTYPE html>
@@ -878,8 +878,9 @@ PLACEHOLDERS: fill these before publishing
               screen-based phonics tools do not reach. A teacher mediates every session, choosing which phonemes to
               introduce, at what pace, and in what sequence, while an accompanying Learner Strength Profile instrument
               generates a personalised radar chart that configures session parameters around each child's cognitive
-              profile. Developed independently as a single-file HTML application requiring no installation, PhonemeAR is
-              currently in the pilot study phase at Anand Niketan Special School in Mapusa, Goa.</p>
+              profile. Developed independently as a single-file HTML application requiring no installation, PhonemeAR
+              has completed its first round of pilot sessions at Sanjay School in Porvorim, Goa, and is now in the
+              analysis phase.</p>
           </div>
         </div>
       </section>
@@ -1129,15 +1130,16 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
         <div class="section-content">
           <p class="section-label">Pilot Study</p>
           <h2 class="section-title">Testing in the field</h2>
-          <p class="pilot-subtitle">Currently in progress at Anand Niketan Special School, Mapusa, Goa</p>
+          <p class="pilot-subtitle">First round of sessions completed at Sanjay School, Porvorim, Goa</p>
 
-          <p class="body-text">The system has been validated technically. The pilot study is designed to validate
-            educational impact, surfacing the things that only field deployment reveals. Sessions are conducted at Anand
-            Niketan Special School in Mapusa, Goa, with neurodiverse children aged 5–8. Mr. Babi Malik has confirmed
-            agreement to facilitate the pilot. Parental consent forms and child assent are required before any session
-            begins.</p>
+          <p class="body-text">The system has been validated technically. The pilot study was designed to validate
+            educational impact, surfacing the things that only field deployment reveals. The first round of sessions
+            was conducted at Sanjay School in Porvorim, Goa, with neurodiverse children from Lower KG through 5th
+            grade. Classes there are grouped by skill rather than age, so the nominal 5–8 age band stretched in
+            practice: the youngest group included a twelve-year-old. Parental consent forms and child assent are
+            required before any session begins.</p>
 
-          <p class="body-text" style="margin-top: 20px;">The pilot is structured around four research questions. First:
+          <p class="body-text" style="margin-top: 20px;">The pilot was structured around four research questions. First:
             does the child engage with the physical cards as the primary interaction object, or does the AR overlay
             become the dominant attractor? Second: does the AR component add to the phoneme-building task, or does it
             distract from it? Third: what error patterns appear in the session logs, specifically the ratio of
@@ -1145,12 +1147,85 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
             facilitating teacher operate the tool without developer support? The last question is treated as a binary
             usability constraint: if the teacher needs help, the tool has failed on its own terms.</p>
 
-          <p class="body-text" style="margin-top: 20px;">Session structure follows a consistent arc: teacher
+          <p class="body-text" style="margin-top: 20px;">Session structure followed a consistent arc: teacher
             introduction, phoneme selection, in-browser card compilation (10–30 seconds), a 10–15 minute scanning
-            session, and review of the session summary screen. JSON session logs are exported for analysis. That the
-            pilot is ongoing rather than complete is not a limitation. It is the honest state of empirically grounded
-            educational technology research, where the most important validation is always the one that happens in the
-            room with the children.</p>
+            session, and review of the session summary screen. JSON session logs are exported for analysis. The most
+            important validation is always the one that happens in the room with the children, and it has now
+            started to happen. What follows are the field notes from that room.</p>
+
+          <!-- ==============================================================
+               FIELD NOTES: first round of pilot sessions, Sanjay School
+               ============================================================== -->
+          <p class="section-label" style="margin-top: 64px;">Field Notes</p>
+
+          <div class="dimensions-list" style="margin-top: 0;">
+
+            <div class="dimension-item">
+              <p class="dimension-tag">Lower KG · Ages 5–8, plus one twelve-year-old</p>
+              <p class="dimension-name">Two letters, one breakthrough</p>
+              <p class="dimension-desc">Only two students in the group were ready for word-building, and they managed
+                two-letter words: <em>at</em>, <em>in</em>, <em>it</em>. The first, a boy with autism his teachers
+                describe as high-functioning, needed time to get the hang of the system, and then something clicked:
+                he was genuinely having fun, and building words fairly well. Two practical discoveries followed him
+                around. The laptop outperformed the phone for smaller words, and its larger screen held his attention
+                far better.</p>
+            </div>
+
+            <div class="dimension-item">
+              <p class="dimension-tag">1st Grade</p>
+              <p class="dimension-name">Chaos, delight, and a lesson in format</p>
+              <p class="dimension-desc">The most chaotic session, and the one where the tool landed best. The teacher
+                stepped out and left the room to the children, and they kept going, holding cards up to the camera
+                unprompted. The AR loop of scanning a card and getting immediate feedback visibly delighted them. It
+                also settled a design question on the spot: this does not work as a group activity. One-on-one is the
+                format. (They said bye and thank you on the way out, which is not a research finding, but is being
+                recorded here anyway.)</p>
+            </div>
+
+            <div class="dimension-item">
+              <p class="dimension-tag">2nd Grade</p>
+              <p class="dimension-name">Where the friction lives</p>
+              <p class="dimension-desc">Three-letter words, and a four-letter word with a lot of hand-holding. Two
+                friction points surfaced. First, depth perception: when scanning with the laptop camera, children
+                struggled to judge where in space to hold a card for it to register. Second, enthusiasm: this group
+                could do the task but was not excited by it. Across every session, the younger the child, the more
+                the AR wowed them.</p>
+            </div>
+
+            <div class="dimension-item">
+              <p class="dimension-tag">3rd–5th Grade · Combined</p>
+              <p class="dimension-name">The boy who scanned his own name</p>
+              <p class="dimension-desc">Two students tested. The first, previously in a mainstream school, could name
+                things and say the words but struggled with spelling. Yet when shown letters in the wrong order, he
+                recognised the error and reshuffled them with ease. The second, a boy with autism reportedly strong
+                with words and numbers, gravitated to the cards and the AR, built words very fast, and after scanning
+                <em>hat</em> went straight to spelling his own name and trying to scan that instead. Their suggestions
+                were direct and good: make the cards more colourful, and show a picture of the word after a correct
+                scan, like a ship for <em>sh/i/p</em>.</p>
+            </div>
+
+            <div class="dimension-item">
+              <p class="dimension-tag">Every classroom</p>
+              <p class="dimension-name">What the teachers said</p>
+              <p class="dimension-desc">Every teacher independently arrived at the same point: they have the children
+                for six hours a day, and learning words demands individual attention no classroom ratio can provide.
+                Where a tool like this would matter most is at home, with parents, because learning to speak and read
+                takes consistent effort over a long period. The caveat is economic: many of these families cannot
+                afford a smartphone, let alone a laptop. And the stakes stretch well beyond the early grades: one teacher noted that some
+                10th graders still require a reader and writer for their final exams.</p>
+            </div>
+
+          </div>
+
+          <div class="pull-quote">
+            <p>"They needed far more hand-holding than I imagined. But once they understood how the system works, they
+              were doing surprisingly well."</p>
+          </div>
+
+          <p class="body-text" style="margin-top: 48px;">The first round leaves a concrete design queue: more
+            colourful cards, an image of the word on a correct scan, guidance for holding cards at scannable distance,
+            and a session structure built around one-on-one facilitation rather than the group. Analysis of the
+            session logs and observations is now underway.</p>
 
           <!-- Stepper: update "active" and "completed" classes as stages progress -->
           <!-- STAGES: System Development → Ethics & Access → Pilot Sessions → Analysis → Publication -->
@@ -1166,13 +1241,12 @@ doi: 10.1109/CCICT65753.2025.00023</pre>
               <span class="step-label">Ethics<br>&amp; Access</span>
             </div>
 
-            <!-- [PLACEHOLDER: pilot study current stage]: mark this as "active" when sessions begin, "completed" when done -->
-            <div class="step active" role="listitem">
+            <div class="step completed" role="listitem">
               <div class="step-dot"></div>
               <span class="step-label">Pilot<br>Sessions</span>
             </div>
 
-            <div class="step" role="listitem">
+            <div class="step active" role="listitem">
               <div class="step-dot"></div>
               <span class="step-label">Analysis</span>
             </div>
